@@ -1,6 +1,6 @@
 #include <iostream>
 #include <Windows.h>
-#include "List.cpp"
+#include "List.hpp"
 using namespace std;
 
 int main()
@@ -8,6 +8,10 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	List<int> ls;
+
+	auto func = [](int val) {};
+
+	for_each<List<int>::LIterator, int>(ls.begin(), ls.end(), func);
 
 	bool menu = true;
 
